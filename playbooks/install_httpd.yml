@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  tasks:
+  - name: install httpd on all servers
+    yum:
+      name: httpd
+      state: present
+  - name: httpd is running and enabled
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+
